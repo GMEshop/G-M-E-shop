@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa; /* Color de fondo más atractivo */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            height: 250px;
+            width: 100%;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            user-select: none;
+            z-index: 10;
+            font-size: 20px;
+            transform: translateY(-50%);
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+
+        .product-info {
+            padding: 10px;
+        }
+
+        .product-info h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            color: #00796b; /* Color del título */
+        }
+
+        .product-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .contact-info {
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #00796b;
+            color: #ffffff;
+            border-radius: 8px;
+            width: 80%; /* Ajusta el ancho según sea necesario */
+            max-width: 600px; /* Ancho máximo para la sección de contacto */
+        }
+
+        .contact-info h3 {
+            margin: 0 0 10px;
+            font-size: 24px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .product-info h2 {
+                font-size: 18px;
+            }
+            .product-info p {
+                font-size: 16px;
+            }
+            .arrow {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="product-grid">
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_750160-MLM48833184974_012022-O.webp" alt="Imagen 1"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_878074-MLM48833308504_012022-O.webp" alt="Imagen 2"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_831622-MLM48833504177_012022-O.webp" alt="Imagen 3"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_884077-MLM49839231786_052022-O.webp" alt="Imagen 4"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra New York Yankees Mlb Classics 59fifty Cerrada</h2>
+                    <p>TALLAS: 7 -- 7 1/2 -- 7 1/4 -- 7 1/8 -- 7 3/4 <br> 7 3/8 -- 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+
+            <!-- Repite el bloque .product para más productos -->
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_977543-MLM75912146040_042024-O.webp" alt="Imagen 6"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_601332-MLM75911939984_042024-O.webp" alt="Imagen 7"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_822037-MLM76087179861_042024-O.webp" alt="Imagen 8"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_829515-MLM76087129879_042024-O.webp" alt="Imagen 9"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra L A Dodgers Armed Forces Mlb 59fifty Cerrada</h2>
+                    <p>TALLAS: 7 1/2 -- 7 1/4 -- 7 1/8 -- 7 3/8 -- 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_826215-MLM49326704202_032022-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_948320-MLM49326648579_032022-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_874535-MLM49326617770_032022-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_624315-MLM49326609912_032022-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Anaheim Angels Gorra Oficial De Juego 59fifty Cerrad</h2>
+                    <p>TALLAS: 7 -- 7 1/4 -- 7 1/8 -- 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_603847-MLM72123376730_102023-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_731837-MLM72183752073_102023-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_997772-MLM72123218890_102023-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_805772-MLM72123267958_102023-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra Atlanta Braves World Series 59fifty Cerrada</h2>
+                    <p>TALLAS: 7 -- 7 1/4 -- 7 1/8 -- 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_731365-MLM75912186068_042024-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_811225-MLM75912186062_042024-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_969137-MLM75911980202_042024-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_857693-MLM76087180151_042024-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra Boston Red Sox Armed Forces 59fifty Cerrada</h2>
+                    <p>TALLAS: 7 -- 7 1/4 -- 7 1/8 -- 7 3/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_773954-MLM76573115315_052024-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_858106-MLM76572977777_052024-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_697624-MLM76378704352_052024-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_702111-MLM76378664464_052024-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_850427-MLM76379316306_052024-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra N Y Yankees Evergreen Mlb 59fifty Cerrada</h2>
+                    <p>TALLAS: 7 -- 7 1/4 -- 7 1/8 -- 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_953307-MLM49326532632_032022-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_700881-MLM49326515826_032022-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_857548-MLM49326634005_032022-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_676869-MLM49326598257_032022-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra L A Dodgers Basic Mlb 59fifty Cerrada Terra</h2>
+                    <p>TALLAS: 7 -- 7 1/2 -- 7 1/4 -- 7 1/8 -- 7 3/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_849720-MLM76087179517_042024-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_702360-MLM75911979482_042024-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_999895-MLM75911989436_042024-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_924841-MLM75911989432_042024-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra N Y Yankees Armed Forces Mlb 59fifty Cerrada</h2>
+                    <p>TALLAS: 7 -- 7 1/8</p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_630814-MLM49388258982_032022-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_979243-MLM49388323642_032022-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_602307-MLM49388339560_032022-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_896431-MLM49388315686_032022-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra Oficial De Juego Toronto Blue Jays 59fifty Mlb</h2>
+                    <p>TALLAS: 7 -- 7 1/2 -- 7 1/4 -- 7 1/8 -- 7 3/8 <br> 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_870777-MLM54588441395_032023-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_969973-MLM54591478828_032023-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_986438-MLM54588600267_032023-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_751939-MLM77074912723_062024-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra Basica De Juego Chicago White Sox Ac 59fifty</h2>
+                    <p>TALLAS: 7 -- 7 1/2 -- 7 1/4 -- 7 1/8 -- 7 3/8 <br> 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_624899-MLM44030696733_112020-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_885468-MLM44030705453_112020-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_656477-MLM44030693873_112020-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_963857-MLM78253206031_082024-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Los Angeles Dodgers Gorra Oficial De Juego 59fifty</h2>
+                    <p>TALLAS: 7 -- 7 1/2 -- 7 1/4 -- 7 1/8 -- 7 3/8 <br> 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_647168-MLM74604332403_022024-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_903844-MLM74480411122_022024-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_870470-MLM74604400787_022024-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_991005-MLM74480421006_022024-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra Oficial De Juego Pittsburgh Piratas 59fifty</h2>
+                    <p>TALLAS: 7 -- 7 1/2 -- 7 1/4 -- 7 1/8 -- 7 3/8 <br> 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_711290-MLM54591301916_032023-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_829277-MLM54591353566_032023-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_792664-MLM54591582050_032023-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_996355-MLM54591582054_032023-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra Basica De Juego Padres De San Diego Ac 59fifty</h2>
+                    <p>TALLAS: 7 -- 7 1/2 -- 7 1/4 -- 7 1/8 -- 7 3/8 <br> 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_617491-MLM76684536108_062024-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_681644-MLM76887654031_062024-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_914829-MLM76684536124_062024-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_647846-MLM76887866713_062024-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra Toronto Blue Jays Ac Alternativo Mlb 59fifty</h2>
+                    <p>TALLAS: 7 -- 7 1/4 -- 7 1/8 -- 7 3/8 <br> 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="product">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_915577-MLM54591442668_032023-O.webp" alt="Imagen 14"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_603779-MLM54591574074_032023-O.webp" alt="Imagen 15"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_878591-MLM54591438826_032023-O.webp" alt="Imagen 16"></div>
+                        <div class="slide"><img src="https://http2.mlstatic.com/D_NQ_NP_712918-MLM54591353476_032023-O.webp" alt="Imagen 16"></div>
+                    </div>
+                    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+                    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+                </div>
+                <div class="product-info">
+                    <h2>New Era Gorra Basica De Juego San Francisco Giants 59fifty</h2>
+                    <p>TALLAS: 7 -- 7 1/2 -- 7 1/4 -- 7 1/8 -- 7 3/8 <br> 7 5/8 </p>
+                    <p>Precio: $850</p>
+                </div>
+            </div>
+
+
+
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <p>Teléfono: 4424263909</p>
+                <p>Copyright ©2024 <br> El presente canal de instrucción o ambiente, es operado por Daniel Galvan identificado bajo la marca comercial "New Era"</p>
+                
+            </div>
+        </div>
+    
+        
+    <script>
+        // Script para la funcionalidad del slider
+        let currentSlide = 0;
+
+        function moveSlide(step) {
+            const sliders = document.querySelectorAll('.slider');
+            sliders.forEach(slider => {
+                const slides = slider.querySelector('.slides');
+                const totalSlides = slides.children.length;
+                currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+                slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            });
+        }
+    </script>
+
+</body>
+</html>
